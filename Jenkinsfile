@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('Env'){
+            steps {
+                sh 'export PATH=/usr/local/maven/bin:$PATH'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn -B -Dversion=${BUILD_NUMBER} -DskipTests clean package'
