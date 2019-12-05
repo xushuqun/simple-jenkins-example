@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('Env'){
-            steps {
-                sh 'source /etc/profile'
-            }
-        }
         stage('Build') {
             steps {
                 sh 'mvn -B -Dversion=${BUILD_NUMBER} -DskipTests clean package'
