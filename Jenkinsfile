@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('Env'){
             steps {
-                sh 'export PATH=/usr/local/maven/bin:$PATH'
+                sh 'source /etc/profile'
             }
         }
         stage('Build') {
