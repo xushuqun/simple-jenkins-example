@@ -10,11 +10,6 @@ pipeline {
             steps {
                 sh 'mvn test -Dversion=${BUILD_NUMBER}'
             }
-            post {
-                always {
-                    tapdTestReport frameType: 'JUnit', onlyNewModified: true, reportPath: 'target/surefire-reports/*.xml'
-                }
-            }
         }
         stage('Quality'){
             environment{
