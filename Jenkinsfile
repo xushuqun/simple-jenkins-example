@@ -18,10 +18,11 @@ pipeline {
         }
         stage('Quality'){
             environment{
-                scannerHome = tool 'test-sonar-scanner'
+                scannerHome = tool 'devops
+                -sonar-scanner'
             }
             steps{
-                withSonarQubeEnv('test-sonarQube'){
+                withSonarQubeEnv('DevOpsSonarQube'){
                     sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
