@@ -18,7 +18,7 @@ pipeline {
         }
         stage('Quality'){
             environment{
-                scannerHome = tool 'devops
+                scannerHome = tool 'default-sonar-scanner
                 -sonar-scanner'
             }
             steps{
