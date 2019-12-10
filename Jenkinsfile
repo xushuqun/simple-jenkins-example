@@ -19,7 +19,6 @@ pipeline {
         stage('Quality'){
             environment{
                 scannerHome = tool 'default-sonar-scanner'
-                -sonar-scanner'
             }
             steps{
                 withSonarQubeEnv('DevOpsSonarQube'){
